@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head">
 </head>
@@ -8,7 +8,12 @@
 
 <div class="container body-content">
     <br></br>
-    <h2>Page Still Under Development</h2>
+    <h2>Flagship Phones</h2>
+    <ul>
+        <li th:each="phone : ${phones}">
+            <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.name}"></a>
+        </li>
+    </ul>
 
 </div>
 
