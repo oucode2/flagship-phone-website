@@ -17,6 +17,36 @@ public class HomeController {
     @Autowired
     private PhoneRepository phoneRepository;
 
+    @GetMapping("apple")
+        public String a(){
+        return "apple";
+    }
+
+    @GetMapping("samsung")
+    public String s(){
+        return "samsung";
+    }
+
+    @GetMapping("lg")
+    public String l(){
+        return "lg";
+    }
+
+    @GetMapping("motorolla")
+    public String m(){
+        return "motorolla";
+    }
+
+    @GetMapping("oneplus")
+    public String o(){
+        return "oneplus";
+    }
+
+    @GetMapping("google")
+    public String g(){
+        return "google";
+    }
+
     @RequestMapping("")
     public String index(Model model) {
         model.addAttribute("phones", phoneRepository.findAll());

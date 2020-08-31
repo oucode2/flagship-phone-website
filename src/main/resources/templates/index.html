@@ -10,9 +10,12 @@
     <br></br>
     <h2>Flagship Phones</h2>
     <ul>
-        <li th:each="phone : ${phones}">
-            <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.name}"></a>
-        </li>
+        <li><a th:href="@{/apple}">Apple</a></li>
+        <li><a th:href="@{/samsung}">Samsung</a></li>
+        <li><a th:href="@{/lg}">LG</a></li>
+        <li><a th:href="@{/oneplus}">OnePlus</a></li>
+        <li><a th:href="@{/motorolla}">Motorolla</a></li>
+        <li><a th:href="@{/google}">Google</a></li>
     </ul>
 
 </div>
