@@ -17,9 +17,11 @@ public class HomeController {
     @Autowired
     private PhoneRepository phoneRepository;
 
-    @GetMapping("apple")
-        public String a(){
-        return "apple";
+    @RequestMapping("apple")
+    public String index(Model model) {
+
+    model.addAttribute("phones", phoneRepository.findAll());
+       return "apple";
     }
 
     @GetMapping("samsung")
@@ -47,9 +49,8 @@ public class HomeController {
         return "google";
     }
 
-    @RequestMapping("")
-    public String index(Model model) {
-        model.addAttribute("phones", phoneRepository.findAll());
+    @GetMapping("")
+    public String index() {
         return "index";
     }
 

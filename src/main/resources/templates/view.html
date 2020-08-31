@@ -4,13 +4,13 @@
 
 <body class="container  body-content">
 <br></br>
-<h1 th:text="${'Company: ' + phone.name}">Default Title</h1>
+<h1 th:text="${'Phone Company: ' + phone.name}">Default Title</h1>
 <nav th:replace="fragments :: page-header"></nav>
 <br></br>
 <div class="job-listing">
     <p th:text="${'Company Name: ' + phone.name}"></p>
     <p th:text="${'Model: ' + phone.model}"></p>
-    <p th:text="${'Price: ' + phone.price}"></p>
+    <p th:text="${'Retail Price: ' + phone.price}"></p>
 </div>
 
 
