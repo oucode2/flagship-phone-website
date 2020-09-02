@@ -1,9 +1,21 @@
 <!DOCTYPE html>
-<html>
-
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
 <body>
 
-Hello World
+<div th:replace="fragments :: page-header"></div>
+
+<div class="container body-content">
+    <br></br>
+    <h2>OnePlus Flagship Phones</h2>
+    <ul>
+        <li th:each="phone : ${phones}" th:if="${phone.name == 'OnePlus'}">
+            <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.model}"></a>
+        </li>
+    </ul>
+
+</div>
 
 </body>
 </html>

@@ -19,33 +19,37 @@ public class HomeController {
 
     @RequestMapping("apple")
     public String index(Model model) {
-
-    model.addAttribute("phones", phoneRepository.findAll());
-       return "apple";
+        model.addAttribute("phones", phoneRepository.findAll());
+        return "apple";
     }
 
-    @GetMapping("samsung")
-    public String s(){
+    @RequestMapping("samsung")
+    public String s (Model model) {
+        model.addAttribute("phones", phoneRepository.findAll());
         return "samsung";
     }
 
-    @GetMapping("lg")
-    public String l(){
+    @RequestMapping("lg")
+    public String l(Model model){
+        model.addAttribute("phones", phoneRepository.findAll());
         return "lg";
     }
 
-    @GetMapping("motorolla")
-    public String m(){
+    @RequestMapping("motorolla")
+    public String m(Model model){
+        model.addAttribute("phones", phoneRepository.findAll());
         return "motorolla";
     }
 
     @GetMapping("oneplus")
-    public String o(){
+    public String o(Model model){
+        model.addAttribute("phones",phoneRepository.findAll());
         return "oneplus";
     }
 
     @GetMapping("google")
-    public String g(){
+    public String g(Model model){
+        model.addAttribute("phones", phoneRepository.findAll());
         return "google";
     }
 
