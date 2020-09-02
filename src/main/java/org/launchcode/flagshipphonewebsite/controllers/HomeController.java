@@ -58,18 +58,18 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping("add")
+    @GetMapping("admin")
     public String displayAddPhoneForm(Model model) {
         model.addAttribute(new Phone());
-        return "add";
+        return "admin";
     }
 
-    @PostMapping("add")
+    @PostMapping("admin")
     public String processAddPhoneForm(@ModelAttribute @Valid Phone newPhone,
                                     Errors errors) {
 
         if (errors.hasErrors()) {
-            return "add";
+            return "admin";
         }
 
         phoneRepository.save(newPhone);
