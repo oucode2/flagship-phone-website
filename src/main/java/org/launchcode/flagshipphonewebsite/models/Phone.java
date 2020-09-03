@@ -50,6 +50,7 @@ public class Phone extends AbstractEntity{
         this.price = price;
     }
 
+
     @Override
     public String toString() {
         return name;

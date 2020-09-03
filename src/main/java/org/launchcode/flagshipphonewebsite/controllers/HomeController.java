@@ -17,8 +17,26 @@ public class HomeController {
     @Autowired
     private PhoneRepository phoneRepository;
 
+    @GetMapping("add")
+    public String AddPhoneForm(Model model) {
+        model.addAttribute(new Phone());
+        return "add";
+    }
+
+    @PostMapping("add")
+    public String AddPhoneForm(@ModelAttribute @Valid Phone newPhone,
+                                      Errors errors) {
+
+        if (errors.hasErrors()) {
+            return "add";
+        }
+
+        phoneRepository.save(newPhone);
+        return "redirect:";
+    }
+
     @RequestMapping("apple")
-    public String index(Model model) {
+    public String a(Model model) {
         model.addAttribute("phones", phoneRepository.findAll());
         return "apple";
     }
@@ -41,13 +59,13 @@ public class HomeController {
         return "motorolla";
     }
 
-    @GetMapping("oneplus")
+    @RequestMapping("oneplus")
     public String o(Model model){
         model.addAttribute("phones",phoneRepository.findAll());
         return "oneplus";
     }
 
-    @GetMapping("google")
+    @RequestMapping("google")
     public String g(Model model){
         model.addAttribute("phones", phoneRepository.findAll());
         return "google";
