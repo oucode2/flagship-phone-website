@@ -17,11 +17,11 @@ public class Phone extends AbstractEntity{
     }
 
     // Initialize the id and value fields.
-    public Phone(String aName, String anEmployer, String someSkill) {
+    public Phone(String aName, String aModel, String aPrice) {
         super();
         this.name = aName;
-        this.model = anEmployer;
-        this.price = someSkill;
+        this.model = aModel;
+        this.price = aPrice;
     }
 
     // Getters and setters.
