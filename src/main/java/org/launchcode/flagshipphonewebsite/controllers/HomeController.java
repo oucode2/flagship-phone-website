@@ -7,9 +7,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
+import java.util.Locale;
 
 import javax.validation.Valid;
 import java.util.Optional;
+
+
 
 @Controller
 public class HomeController {
@@ -35,6 +38,9 @@ public class HomeController {
         return "redirect:";
     }
 
+
+
+
     @RequestMapping("apple")
     public String a(Model model) {
         model.addAttribute("phones", phoneRepository.findAll());
@@ -43,6 +49,7 @@ public class HomeController {
 
     @RequestMapping("samsung")
     public String s (Model model) {
+
         model.addAttribute("phones", phoneRepository.findAll());
         return "samsung";
     }

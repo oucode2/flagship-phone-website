@@ -10,8 +10,7 @@
     <br></br>
     <h2>Apple Flagship Phones</h2>
     <ul>
-
-        <li th:each="phone : ${phones}" th:if="${phone.name == 'Apple'}">
+        <li th:each="phone : ${phones}" th:if="${#strings.toLowerCase(phone.name) == 'apple'}">
             <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.model}"></a>
         </li>
     </ul>

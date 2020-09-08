@@ -13,6 +13,7 @@ public class Phone extends AbstractEntity{
     private String model;
     private String price;
 
+
     public Phone() {
     }
 
@@ -26,9 +27,7 @@ public class Phone extends AbstractEntity{
 
     // Getters and setters.
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
 
     public void setName(String name) {
         this.name = name;
