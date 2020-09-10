@@ -38,9 +38,6 @@ public class HomeController {
         return "redirect:";
     }
 
-
-
-
     @RequestMapping("apple")
     public String a(Model model) {
         model.addAttribute("phones", phoneRepository.findAll());

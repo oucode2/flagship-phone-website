@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+<body>
+
+<div th:replace="fragments :: page-header"></div>
+<br></br>
+<div class="container body-content">
+    <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+    <h2 class = "centered">View Phones By Category</h2>
+</div>
+<style>
+         table, th, td {
+            border: 1px solid black;
+            width: 20%;
+            margin:25px 0 0 25px;
+         }
+</style>
+<table>
+    <tr>
+        <th>All</th>
+        <th>Models</th>
+        <th>Price</th>
+    </tr>
+
+    <tr>
+        <td>
+            <li>
+                <a th:href="@{/list/phones(column='All',value='View All')}">View All</a>
+            </li>
+        </td>
+        <td>
+            <li th:each="phone : ${phones}">
+                <a th:href="@{/list/phones(column=model,value=${phone.model})}" th:text="${phone.model}"></a>
+            </li>
+        </td>
+        <td>
+            <li th:each="phone : ${phones}">
+                <a th:href="@{/list/phones(column=price,value=${phone.price})}" th:text="${'$ ' + phone.price}">></a>
+            </li>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
