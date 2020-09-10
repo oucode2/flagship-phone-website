@@ -1,7 +1,7 @@
 package org.launchcode.flagshipphonewebsite.controllers;
 
 import org.launchcode.flagshipphonewebsite.models.Phone;
-import org.launchcode.flagshipphonewebsite.models.phoneData;
+import org.launchcode.flagshipphonewebsite.models.PhoneData;
 import org.launchcode.flagshipphonewebsite.models.data.PhoneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -40,7 +40,7 @@ public class ListController {
             phones = phoneRepository.findAll();
             model.addAttribute("title", "All Phones");
         } else {
-            phones = phoneData.findByColumnAndValue(column, value, phoneRepository.findAll());
+            phones = PhoneData.findByColumnAndValue(column, value, phoneRepository.findAll());
             model.addAttribute("title", "phones with " + columnChoices.get(column) + ": " + value);
         }
         model.addAttribute("phones", phones);

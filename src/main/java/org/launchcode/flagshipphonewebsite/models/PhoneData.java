@@ -2,7 +2,7 @@ package org.launchcode.flagshipphonewebsite.models;
 
 import java.util.ArrayList;
 
-public class phoneData {
+public class PhoneData {
 
 
     /**
