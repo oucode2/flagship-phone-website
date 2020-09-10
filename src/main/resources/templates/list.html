@@ -15,7 +15,7 @@
             border: 1px solid black;
             width: 20%;
             margin:25px 0 0 25px;
-         }
+           }
 </style>
 <table>
     <tr>
@@ -26,19 +26,21 @@
 
     <tr>
         <td>
-            <li>
-                <a th:href="@{/list/phones(column='All',value='View All')}">View All</a>
-            </li>
+            <a th:href="@{/list/phones(column='All',value='View All')}">View All</a>
         </td>
         <td>
+            <ul style="list-style-type:none;">
             <li th:each="phone : ${phones}">
                 <a th:href="@{/list/phones(column=model,value=${phone.model})}" th:text="${phone.model}"></a>
             </li>
+            </ul>
         </td>
         <td>
+            <ul style="list-style-type:none;">
             <li th:each="phone : ${phones}">
                 <a th:href="@{/list/phones(column=price,value=${phone.price})}" th:text="${'$ ' + phone.price}">></a>
             </li>
+                </ul>
         </td>
     </tr>
 </table>
