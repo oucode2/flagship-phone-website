@@ -5,19 +5,12 @@
 <body>
 
 <div th:replace="fragments :: page-header"></div>
-<br></br>
 <div class="container body-content">
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
     <h2 class = "centered">View Phones By Category</h2>
 </div>
-<style>
-         table, th, td {
-            border: 1px solid black;
-            width: 20%;
-            margin:25px 0 0 25px;
-           }
-</style>
-<table>
+
+<table class="centeredTable">
     <tr>
         <th>All</th>
         <th>Models</th>
