@@ -2,7 +2,6 @@ package org.launchcode.flagshipphonewebsite;
 
 import org.launchcode.flagshipphonewebsite.controllers.AuthenticationController;
 import org.launchcode.flagshipphonewebsite.models.User;
-import org.launchcode.flagshipphonewebsite.models.data.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 

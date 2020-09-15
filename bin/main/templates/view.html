@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container  body-content">
+<br></br>
+<h1 th:text="${'Company Name: ' + #strings.capitalize(phone.name)}">Default Title</h1>
+<nav th:replace="fragments :: page-header"></nav>
+<br></br>
+<div class="phone-listing">
+    <p th:text="${'Phone Id: ' + phone.id}"></p>
+    <p th:text="${'Company Name: ' + #strings.capitalize(phone.name)}"></p>
+    <p th:text="${'Model: ' + phone.model}"></p>
+    <p th:text="${'Retail Price: $ ' + phone.price}"></p>
+</div>
+
+
+</body>
+</html>
