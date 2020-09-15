@@ -12,8 +12,7 @@
         <tr th:each="phone : ${phones}">
             <td>
                 <p>
-                    <br></br>
-                    Phone Id:
+                    Phone ID:
                     <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.id}"></a>
                 </p>
                 <p th:text="${'Company Name: ' + phone.name}"></p>

@@ -35,15 +35,15 @@
         <input type="submit" value="Search" />
     </form>
 
-    <hr />
+    <hr/>
 
 
-    <table class="job-listing">
+    <table class="phone-listing">
         <tr th:each="phone : ${phones}">
             <br>
                 <br></br>
                 <p>
-                    Phone Id:
+                    Phone ID:
                     <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.id}"></a>
                 </p>
                 <p th:text="${'Company Name: ' + phone.name}"></p>

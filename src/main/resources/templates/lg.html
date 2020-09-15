@@ -7,7 +7,6 @@
 <div th:replace="fragments :: page-header"></div>
 
 <div class="container body-content">
-    <br></br>
     <h2>LG Flagship Phones</h2>
     <ul>
         <li th:each="phone : ${phones}" th:if="${#strings.toLowerCase(phone.name) == 'lg'}">
