@@ -23,8 +23,9 @@ public class ListController {
     public ListController() {
 
         columnChoices.put("all", "All");
+        columnChoices.put ("name", "Company Name");
         columnChoices.put("model", "Model");
-        columnChoices.put("price", "Price");
+        columnChoices.put("price", "Retail Price");
         }
 
     @RequestMapping("")

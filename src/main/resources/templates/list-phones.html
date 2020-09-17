@@ -13,8 +13,10 @@
                 <p>
                     Phone ID:
                     <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.id}"></a>
-                </p>
-                <p th:text="${'Company Name: ' + phone.name}"></p>
+                <p>
+                    Company Name:
+                    <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.name}"></a>
+                    </p>
                 <p>
                     Model:
                     <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.model}"></a>
@@ -22,6 +24,34 @@
                 <p>
                    Retail Price: $
                     <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.price}"></a>
+                </p>
+                <p>
+                    Size:  
+                     <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.size}"></a>
+                 </p>
+                 <p>
+                    Processor: 
+                     <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.processor}"></a>
+                 </p>
+                 <p>
+                    Operating System: 
+                    <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.os}"></a>
+                </p>
+                <p>
+                    RAM: 
+                    <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.ram}"></a>
+                </p>
+                <p>
+                    Battery:
+                    <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.battery}"></a>
+                </p>
+                <p>
+                    Storage Options:
+                    <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.storage}"></a>
+                </p>
+                <p>
+                    Speakers: 
+                    <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.speakers}"></a>
                 </p>
             </td>
         </tr>

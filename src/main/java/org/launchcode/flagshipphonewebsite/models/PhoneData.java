@@ -4,18 +4,6 @@ import java.util.ArrayList;
 
 public class PhoneData {
 
-
-    /**
-     * Returns the results of searching the Jobs data by field and search term.
-     * <p>
-     * For example, searching for employer "Enterprise" will include results
-     * with "Enterprise Holdings, Inc".
-     *
-     * @param column    Job field that should be searched.
-     * @param value     Value of the field to search for.
-     * @param allPhones The list of jobs to search.
-     * @return List of all jobs matching the criteria.
-     */
     public static ArrayList<Phone> findByColumnAndValue(String column, String value, Iterable<Phone> allPhones) {
 
         ArrayList<Phone> results = new ArrayList<>();

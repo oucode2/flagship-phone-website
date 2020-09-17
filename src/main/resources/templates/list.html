@@ -13,8 +13,9 @@
 <table class="centeredTable">
     <tr>
         <th>All</th>
-        <th>Models</th>
-        <th>Price</th>
+        <th>Company Name</th>
+        <th>Model</th>
+        <th>Retail Price</th>
     </tr>
 
     <tr>
@@ -22,18 +23,19 @@
             <a th:href="@{/list/phones(column='All',value='View All')}">View All</a>
         </td>
         <td>
-            <ul style="list-style-type:none;">
+            <li th:each="phone : ${phones}">
+                <a th:href="@{/list/phones(column=name,value=${phone.name})}" th:text="${phone.name}"></a>
+            </li>
+            </td>
+        <td>
             <li th:each="phone : ${phones}">
                 <a th:href="@{/list/phones(column=model,value=${phone.model})}" th:text="${phone.model}"></a>
             </li>
-            </ul>
-        </td>
+            </td>
         <td>
-            <ul style="list-style-type:none;">
             <li th:each="phone : ${phones}">
                 <a th:href="@{/list/phones(column=price,value=${phone.price})}" th:text="${'$ ' + phone.price}">></a>
             </li>
-                </ul>
         </td>
     </tr>
 </table>
