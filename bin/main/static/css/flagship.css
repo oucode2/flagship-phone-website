@@ -60,3 +60,16 @@ div.phone-listing {
     width: 80%;
     background-color: #e4e4e4;
 }
+
+div.text {
+    margin-top: 40px;
+    display: block;
+    float: right;
+}
+
+div.image {
+    margin-top: -40px;
+    display: block;
+    float: right;
+
+}
