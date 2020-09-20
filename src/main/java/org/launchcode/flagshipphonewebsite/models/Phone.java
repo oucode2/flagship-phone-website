@@ -12,10 +12,14 @@ public class Phone extends AbstractEntity{
     private String name;
     private String model;
     private String price;
+    private String colors;
     private String size;
+    private String build;
+    private String resistance;
     private String processor;
     private String os;
     private String ram;
+    private String camera;
     private String battery;
     private String storage;
     private String speakers;
@@ -24,15 +28,19 @@ public class Phone extends AbstractEntity{
     }
 
     // Initialize the id and value fields.
-    public Phone(String aName, String aModel, String aPrice, String aSize, String aProcessor, String aOs, String aRam, String aBattery, String aStorage, String aSpeakers) {
+    public Phone(String aName, String aModel, String aPrice, String aColors, String aSize, String aBuild, String aResistance, String aProcessor, String aOs, String aRam, String aCamera, String aBattery, String aStorage, String aSpeakers) {
         super();
         this.name = aName;
         this.model = aModel;
         this.price = aPrice;
+        this.colors = aColors;
         this.size = aSize;
+        this.build = aBuild;
+        this.resistance = aResistance;
         this.processor = aProcessor;
         this.os = aOs;
         this.ram = aRam;
+        this.camera = aCamera;
         this.battery = aBattery;
         this.storage = aStorage;
         this.speakers = aSpeakers;
@@ -64,6 +72,13 @@ public class Phone extends AbstractEntity{
         this.price = price;
     }
 
+    public String getColors() {
+        return colors;
+    }
+
+    public void setColors(String colors) {
+        this.colors = colors;
+    }
     public String getSize() {
         return size;
     }
@@ -71,7 +86,23 @@ public class Phone extends AbstractEntity{
     public void setSize(String size) {
         this.size = size;
     }
+    
+    public String getBuild() {
+        return build;
+    }
 
+    public void setBuild(String build) {
+        this.build = build;
+    }
+
+    public String getResistance() {
+        return resistance;
+    }
+
+    public void setResistance(String resistance) {
+        this.resistance = resistance;
+    }
+    
     public String getProcessor() {
         return processor;
     }
@@ -93,6 +124,14 @@ public class Phone extends AbstractEntity{
 
     public void setRam(String ram) {
         this.ram = ram;
+    }
+
+    public String getCamera() {
+        return camera;
+    }
+
+    public void setCamera(String camera) {
+        this.camera = camera;
     }
 
     public String getBattery() {

@@ -8,15 +8,19 @@
 <nav th:replace="fragments :: page-header"></nav>
 <br></br>
 <div class="phone-listing">
-    <div class="text">
+<div class="text">
     <p th:text="${'Phone ID: ' + phone.id}"></p>
-    <p th:text="${'Company Name: ' + #strings.capitalize(phone.name)}"></p>
+    <p th:text="${'Brand Name: ' + #strings.capitalize(phone.name)}"></p>
     <p th:text="${'Model: ' + phone.model}"></p>
     <p th:text="${'Retail Price: $ ' + phone.price}"></p>
     <p th:text="${'Screen Size: ' + phone.size}"></p>
+    <p th:text="${'Colors: ' + phone.colors}"></p>
+    <p th:text="${'Build: ' + phone.build}"></p>
+    <p th:text="${'Water Resistance: ' + phone.resistance}"></p>
     <p th:text="${'Processor: ' + phone.processor}"></p>
     <p th:text="${'Operating System: ' + phone.os}"></p>
     <p th:text="${'RAM: ' + phone.ram}"></p>
+    <p th:text="${'Camera: ' + phone.camera}"></p>
     <p th:text="${'Battery Size: ' + phone.battery}"></p>
     <p th:text="${'Storage Options: ' + phone.storage}"></p>
     <p th:text="${'Dual Speakers: ' + phone.speakers}"></p>
@@ -31,6 +35,9 @@
     </p>     
     <p th:if="${#strings.toLowerCase(phone.model) == 'iphone 11'}">
         <img th:src="@{/image/iphone11.png}" alt="image" height="500" width="500">
+    </p> 
+    <p th:if="${#strings.toLowerCase(phone.model) == 'edge +'}">
+        <img th:src="@{/image/motoedgeplus.png}" alt="image" height="500" width="500">
     </p> 
 </div>
 </div>

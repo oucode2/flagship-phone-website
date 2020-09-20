@@ -55,10 +55,10 @@ public class HomeController {
         return "lg";
     }
 
-    @RequestMapping("motorolla")
+    @RequestMapping("motorola")
     public String m(Model model){
         model.addAttribute("phones", phoneRepository.findAll());
-        return "motorolla";
+        return "motorola";
     }
 
     @RequestMapping("oneplus")

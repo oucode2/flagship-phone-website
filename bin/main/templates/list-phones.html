@@ -14,7 +14,7 @@
                     Phone ID:
                     <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.id}"></a>
                 <p>
-                    Company Name:
+                    Brand Name:
                     <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.name}"></a>
                     </p>
                 <p>
@@ -26,8 +26,20 @@
                     <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.price}"></a>
                 </p>
                 <p>
+                    Build:  
+                    <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.build}"></a>
+                </p>
+                <p>
+                    Water Resistance: 
+                    <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.resistance}"></a>
+                </p>
+                <p>
                     Size:  
                      <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.size}"></a>
+                 </p>
+                 <p>
+                    Colors: 
+                     <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.colors}"></a>
                  </p>
                  <p>
                     Processor: 
@@ -40,6 +52,10 @@
                 <p>
                     RAM: 
                     <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.ram}"></a>
+                </p>
+                <p>
+                    Camera: 
+                    <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.camera}"></a>
                 </p>
                 <p>
                     Battery:

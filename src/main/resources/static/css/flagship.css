@@ -61,15 +61,17 @@ div.phone-listing {
     background-color: #e4e4e4;
 }
 
-div.text {
+div.text{
     margin-top: 40px;
     display: block;
-    float: right;
+    float: left;
+    width: 50%;
 }
 
 div.image {
-    margin-top: -40px;
+    margin-top: -30px;
     display: block;
     float: right;
-
+    overflow: hidden;
+    width: 50%;
 }

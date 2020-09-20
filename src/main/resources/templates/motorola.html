@@ -7,9 +7,9 @@
 <div th:replace="fragments :: page-header"></div>
 
 <div class="container body-content">
-    <h2>Motorolla Flagship Phones</h2>
+    <h2>Motorola Flagship Phones</h2>
     <ul>
-        <li th:each="phone : ${phones}" th:if="${#strings.toLowerCase(phone.name) == 'motorolla'}">
+        <li th:each="phone : ${phones}" th:if="${#strings.toLowerCase(phone.name) == 'motorola'}">
             <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.model}"></a>
         </li>
     </ul>
