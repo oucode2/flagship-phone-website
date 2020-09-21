@@ -23,12 +23,13 @@ public class Phone extends AbstractEntity{
     private String battery;
     private String storage;
     private String speakers;
+    private String image;
     
     public Phone() {
     }
 
     // Initialize the id and value fields.
-    public Phone(String aName, String aModel, String aPrice, String aColors, String aSize, String aBuild, String aResistance, String aProcessor, String aOs, String aRam, String aCamera, String aBattery, String aStorage, String aSpeakers) {
+    public Phone(String aImage, String aName, String aModel, String aPrice, String aColors, String aSize, String aBuild, String aResistance, String aProcessor, String aOs, String aRam, String aCamera, String aBattery, String aStorage, String aSpeakers) {
         super();
         this.name = aName;
         this.model = aModel;
@@ -44,6 +45,7 @@ public class Phone extends AbstractEntity{
         this.battery = aBattery;
         this.storage = aStorage;
         this.speakers = aSpeakers;
+        this.image = aImage;
         }
 
     // Getters and setters.
@@ -102,7 +104,7 @@ public class Phone extends AbstractEntity{
     public void setResistance(String resistance) {
         this.resistance = resistance;
     }
-    
+
     public String getProcessor() {
         return processor;
     }
@@ -158,9 +160,19 @@ public class Phone extends AbstractEntity{
         this.speakers = speakers;
     }
 
+    public String getImage() { 
+        return image; 
+    }
+
+    public void setImage(String image) {
+    this.image = image;
+    }
+
     @Override
     public String toString() {
         return name;
+
+   
     }
 
 }
