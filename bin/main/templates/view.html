@@ -27,24 +27,7 @@
 </div>
 <div class="image">
     <br></br>
-    <p th:if="${#strings.toLowerCase(phone.model) == 'iphone 11 pro'}">
-        <img th:src="@{/image/iphone11pro.png}" alt="image" height="500" width="400">
-    </p>       
-    <p th:if="${#strings.toLowerCase(phone.model) == 'iphone 11 pro max'}">
-        <img th:src="@{/image/iphone11promax.png}" alt="image" height="500" width="500">
-    </p>     
-    <p th:if="${#strings.toLowerCase(phone.model) == 'iphone 11'}">
         <img th:src="${'data:image/png;base64,' + phone.image}"  alt="image" height="500" width="500">
-    </p> 
-    <p th:if="${#strings.toLowerCase(phone.model) == 'edge +'}">
-        <img th:src="@{/image/motoedgeplus.png}" alt="image" height="500" width="500">
-    </p> 
-    <p th:if="${#strings.toLowerCase(phone.model) == 'edge'}">
-        <img th:src="@{/image/motoedge.png}" alt="image" height="500" width="500">
-    </p> 
-    <p th:if="${#strings.toLowerCase(phone.model) == 'pixel 4 xl'}">
-        <img th:src="@{/image/pixel4xl.png}" alt="image" height="500" width="500">
-    </p> 
 </div>
 </div>
 </body>
