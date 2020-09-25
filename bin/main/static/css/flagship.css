@@ -72,6 +72,17 @@ div.image {
     margin-top: -30px;
     display: block;
     float: right;
-    overflow: hidden;
+    width: 50%;
+}
+
+div.leftimage {
+    display: block;
+    float: left;
+    width: 50%;
+}
+
+div.rightimage {
+    display: block;
+    float: right;
     width: 50%;
 }

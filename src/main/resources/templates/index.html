@@ -5,19 +5,25 @@
 <body>
 
 <div th:replace="fragments :: page-header"></div>
+    <br></br>
+    <div class="leftimage">
+        <a th:href="@{/apple}">
+            <img alt="Apple Flagship Phones" title="Apple Flagship Phones" height="450" width="600"
+            th:src="@{/image/iphone11s.png}" />
+        </a>
+    </div>    
+    <div class="rightimage">
+        <a th:href="@{/samsung}">
+            <img alt="Samsung Flagship Phones" title="Samsung Flagship Phones" height="475" width="500"
+            th:src="@{/image/s20line.png}" />
+        </a>
+    </div>
+    <li><a th:href="@{/lg}">LG</a></li>
+    <li><a th:href="@{/oneplus}">OnePlus</a></li>
+    <li><a th:href="@{/motorola}">Motorola</a></li>
+    <li><a th:href="@{/google}">Google</a></li>
+    
 
-<div class="container body-content">
-    <h2>Flagship Phones</h2>
-    <ul>
-        <li><a th:href="@{/apple}">Apple</a></li>
-        <li><a th:href="@{/samsung}">Samsung</a></li>
-        <li><a th:href="@{/lg}">LG</a></li>
-        <li><a th:href="@{/oneplus}">OnePlus</a></li>
-        <li><a th:href="@{/motorola}">Motorola</a></li>
-        <li><a th:href="@{/google}">Google</a></li>
-    </ul>
-
-</div>
 
 </body>
 </html>
