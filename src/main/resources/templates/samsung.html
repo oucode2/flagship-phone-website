@@ -11,7 +11,7 @@
 
     <p th:each="phone : ${phones}" th:if="${#strings.toLowerCase(phone.name) == 'samsung'}">
         <a th:href="@{'/view/' + ${phone.id}}" >
-        <img th:src="${'data:image/png;base64,' + phone.image}" height="250" width="250" th:text="${phone.model}" th:href="@{'/view/' + ${phone.id}}"/>
+        <img th:src="${'data:image/png;base64,' + phone.image}" height="250" width="250" th:text="${phone.model}"/>
         </a>
     </p>
 
