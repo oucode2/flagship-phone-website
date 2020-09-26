@@ -17,6 +17,7 @@ td {
 .centeredTable {
     margin-left: auto;
     margin-right: auto;
+    border: 1px solid #e4e4e4;
 }
 
 table.phone-listing {
@@ -39,6 +40,7 @@ label {
 
 .centered {
     text-align: center;
+    font-size: large;
 }
 
 p {
