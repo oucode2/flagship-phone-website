@@ -69,6 +69,11 @@
                     Speakers: 
                     <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.speakers}"></a>
                 </p>
+            </td> 
+            <td>
+                <div class="rightImage">
+                <img th:src="${'data:image/png;base64,' + phone.image}"  alt="image" height="350" width="350">
+                </div>   
             </td>
         </tr>
     </table>

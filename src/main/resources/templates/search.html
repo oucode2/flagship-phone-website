@@ -36,10 +36,9 @@
 
     <hr/>
 
-
 <table class="phone-listing">
-        <tr th:each="phone : ${phones}">
-             <br></br>
+    <tr th:each="phone : ${phones}">
+            <td>
                 <p>
                     Phone ID:
                     <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.id}"></a>
@@ -100,10 +99,13 @@
                     <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.speakers}"></a>
                 </p>
             </td>
-        </tr>
-    </table>
-
+            <td>
+                <div class="rightImage">
+                    <img th:src="${'data:image/png;base64,' + phone.image}"  alt="image" height="350" width="350">
+            </td>
+            </div>
+    </tr>
+</table>
 </div>
-
 </body>
 </html>

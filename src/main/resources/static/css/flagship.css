@@ -14,19 +14,15 @@ td {
     vertical-align: top;
 }
 
-tr:nth-child(odd) {
-    background-color: #e4e4e4;
-}
-
 .centeredTable {
     margin-left: auto;
     margin-right: auto;
 }
 
 table.phone-listing {
-    margin: 30px auto;
-    border: 1px solid #e4e4e4;
-    width: 80%;
+    width: 100%;
+    display: block;
+    float: left;
 }
 
 table.phone-listing td:first-child {
@@ -34,7 +30,7 @@ table.phone-listing td:first-child {
 }
 
 table.phone-listing td:last-child {
-    width: 80%;
+    width: 50%;
 }
 
 label {
@@ -75,14 +71,20 @@ div.image {
     width: 50%;
 }
 
-div.leftimage {
+div.leftImage {
     display: block;
     float: left;
     width: 50%;
 }
 
-div.rightimage {
+div.rightImage {
     display: block;
     float: right;
+    width: 50%;
+}
+
+div.leftData {
+    display: block;
+    float: left;
     width: 50%;
 }
