@@ -27,7 +27,8 @@
 </div>
 <div class="image">
     <br></br>
-    <img th:src="${'data:image/png;base64,' + phone.image}"  alt="image" width="500">
+    <img th:src="${'data:image/png;base64,' + phone.image}"  alt="image" width="500" th:if= "${phone.image != null}"/>
+    <img th:src= "@{/image/imagecomingsoon.png}" width="500" th:if= "${phone.image == null}"/>
 </div>
 </div>
 </body>
