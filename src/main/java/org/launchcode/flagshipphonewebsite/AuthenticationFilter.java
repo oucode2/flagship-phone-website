@@ -8,6 +8,8 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.validation.constraints.Null;
+
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -43,13 +45,22 @@ public class AuthenticationFilter extends HandlerInterceptorAdapter {
         User user = authenticationController.getUserFromSession(session);
 
         // The user is logged in
-        if (user != null) {
+              
+        if (user == null) {
+            response.sendRedirect("/login");
+            return false;
+        }
+            else if ((request.getRequestURI().startsWith("/admin")) && (!user.getUsertype().equals("admin"))) {
+                response.sendRedirect("/login");
+                return false;
+        }
+        else {
             return true;
         }
 
-        // The user is NOT logged in
-        response.sendRedirect("/login");
-        return false;
+        
+        
+        
 
     }
 }

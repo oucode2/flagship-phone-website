@@ -32,6 +32,8 @@ public class LoginFormDTO {
         this.password = password;
     }
 
-    
+    public String getUser() {
+        return password;
+    }    
 
 }
