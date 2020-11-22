@@ -4,12 +4,9 @@ import org.launchcode.flagshipphonewebsite.controllers.AuthenticationController;
 import org.launchcode.flagshipphonewebsite.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.validation.constraints.Null;
-
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -58,7 +55,6 @@ public class AuthenticationFilter extends HandlerInterceptorAdapter {
             return true;
         }
 
-        
         
         
 
