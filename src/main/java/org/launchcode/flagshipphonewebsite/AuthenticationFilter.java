@@ -47,9 +47,9 @@ public class AuthenticationFilter extends HandlerInterceptorAdapter {
             response.sendRedirect("/login");
             return false;
         }
-            else if ((request.getRequestURI().startsWith("/admin")) && (!user.getUsertype().equals("admin"))) {
-                response.sendRedirect("/login");
-                return false;
+        else if ((request.getRequestURI().startsWith("/admin")) && (!user.getUsertype().equals("admin"))) {
+            response.sendRedirect("/login");
+            return false;
         }
         else {
             return true;
