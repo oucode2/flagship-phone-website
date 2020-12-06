@@ -10,61 +10,23 @@
     <table class="phone-listing">
         <tr th:each="phone : ${phones}">
             <td>
+                <br></br>
+                <br></br>
                 <p>
-                    Brand Name:
-                    <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.name}"></a>
-                    </p>
+                    Brand Name: 
+                    <a th:text="${phone.name}" th:remove="tag"></a>
+                </p>
                 <p>
                     Model:
-                    <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.model}"></a>
+                    <a th:text="${phone.model}" th:remove="tag"></a>
                 </p>
                 <p>
                    Retail Price: $
-                    <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.price}"></a>
+                    <a th:text="${phone.price}" th:remove="tag"></a>
                 </p>
                 <p>
-                    Build:  
-                    <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.build}"></a>
-                </p>
-                <p>
-                    Water Resistance: 
-                    <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.resistance}"></a>
-                </p>
-                <p>
-                    Size:  
-                     <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.size}"></a>
-                 </p>
-                 <p>
-                    Colors: 
-                     <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.colors}"></a>
-                 </p>
-                 <p>
-                    Processor: 
-                     <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.processor}"></a>
-                 </p>
-                 <p>
-                    Operating System: 
-                    <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.os}"></a>
-                </p>
-                <p>
-                    RAM: 
-                    <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.ram}"></a>
-                </p>
-                <p>
-                    Camera: 
-                    <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.camera}"></a>
-                </p>
-                <p>
-                    Battery:
-                    <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.battery}"></a>
-                </p>
-                <p>
-                    Storage Options:
-                    <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.storage}"></a>
-                </p>
-                <p>
-                    Speakers: 
-                    <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.speakers}"></a>
+                    Details:  
+                    <a th:href="@{'/view/' + ${phone.id}}">Click here to see more details</a>
                 </p>
                 <hr></hr>
             </td> 
