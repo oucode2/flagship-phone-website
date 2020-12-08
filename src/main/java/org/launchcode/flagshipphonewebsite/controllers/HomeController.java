@@ -1,7 +1,9 @@
 package org.launchcode.flagshipphonewebsite.controllers;
 
 import org.launchcode.flagshipphonewebsite.models.data.PhoneRepository;
+import org.launchcode.flagshipphonewebsite.models.data.UserRepository;
 import org.launchcode.flagshipphonewebsite.models.Phone;
+import org.launchcode.flagshipphonewebsite.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,24 +19,6 @@ public class HomeController {
 
     @Autowired
     private PhoneRepository phoneRepository;
-
-    @GetMapping("add")
-    public String AddPhoneForm(Model model) {
-        model.addAttribute(new Phone());
-        return "add";
-    }
-
-    @PostMapping("add")
-    public String AddPhoneForm(@ModelAttribute @Valid Phone newPhone,
-                                      Errors errors) {
-
-        if (errors.hasErrors()) {
-            return "add";
-        }
-
-        phoneRepository.save(newPhone);
-        return "redirect:";
-    }
 
     @RequestMapping("apple")
     public String a(Model model) {
@@ -74,8 +58,8 @@ public class HomeController {
     }
 
     @GetMapping("")
-    public String index() {
-        return "index";
+    public String home() {
+        return "home";
     }
 
     @GetMapping("admin")
