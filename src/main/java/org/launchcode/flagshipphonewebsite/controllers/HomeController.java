@@ -1,9 +1,9 @@
 package org.launchcode.flagshipphonewebsite.controllers;
 
 import org.launchcode.flagshipphonewebsite.models.data.PhoneRepository;
-import org.launchcode.flagshipphonewebsite.models.data.UserRepository;
 import org.launchcode.flagshipphonewebsite.models.Phone;
-import org.launchcode.flagshipphonewebsite.models.User;
+//import org.launchcode.flagshipphonewebsite.models.data.UserRepository;
+//import org.launchcode.flagshipphonewebsite.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -83,7 +83,7 @@ public class HomeController {
     @GetMapping("view/{phoneId}")
     public String displayViewPhone(Model model, @PathVariable int phoneId) {
 
-        Optional optPhone = phoneRepository.findById(phoneId);
+        Optional<?> optPhone = phoneRepository.findById(phoneId);
         if (!optPhone.isEmpty()) {
             Phone phone = (Phone) optPhone.get();
             model.addAttribute("phone", phone);
