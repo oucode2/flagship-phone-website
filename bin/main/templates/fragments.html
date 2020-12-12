@@ -28,7 +28,7 @@
                 <li><a th:href="@{/admin}" >Admin</a></li>
                 <li><a th:href="@{/logout}">Logout</a></li>
                 <!-- <li><a th:each="phone : ${phones}" th:if="${phone.model != null}" th:text="${phone.model}" th:remove="tag"></a></li> -->
-                     <li><a th:each="user : ${users}" th:if="${user.usertype != null}" th:text="${user.usertype}" th:remove="tag"></a></li>    
+                     <li><a th:each="user : ${users}" th:if="${user.username != null}" th:text="${user.username}" th:remove="tag"></a></li>    
             </ul>
         </div>
     </div>
