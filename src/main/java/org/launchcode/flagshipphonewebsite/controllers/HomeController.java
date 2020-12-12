@@ -1,6 +1,7 @@
 package org.launchcode.flagshipphonewebsite.controllers;
 
 import org.launchcode.flagshipphonewebsite.models.data.PhoneRepository;
+import org.launchcode.flagshipphonewebsite.models.data.UserRepository;
 import org.launchcode.flagshipphonewebsite.models.Phone;
 //import org.launchcode.flagshipphonewebsite.models.data.UserRepository;
 //import org.launchcode.flagshipphonewebsite.models.User;
@@ -19,6 +20,9 @@ public class HomeController {
 
     @Autowired
     private PhoneRepository phoneRepository;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @RequestMapping("apple")
     public String a(Model model) {
@@ -47,7 +51,7 @@ public class HomeController {
 
     @RequestMapping("oneplus")
     public String o(Model model){
-        model.addAttribute("phones",phoneRepository.findAll());
+        model.addAttribute("phones", phoneRepository.findAll());
         return "oneplus";
     }
 
@@ -58,7 +62,8 @@ public class HomeController {
     }
 
     @GetMapping("")
-    public String home() {
+    public String home(Model model) {
+        model.addAttribute("users", userRepository.findAll());
         return "home";
     }
 
