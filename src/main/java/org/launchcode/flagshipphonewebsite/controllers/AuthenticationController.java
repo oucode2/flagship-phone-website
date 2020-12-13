@@ -1,7 +1,9 @@
 package org.launchcode.flagshipphonewebsite.controllers;
 
 import org.launchcode.flagshipphonewebsite.models.User;
+import org.launchcode.flagshipphonewebsite.models.Phone;
 import org.launchcode.flagshipphonewebsite.models.data.UserRepository;
+import org.launchcode.flagshipphonewebsite.models.data.PhoneRepository;
 import org.launchcode.flagshipphonewebsite.models.dto.LoginFormDTO;
 import org.launchcode.flagshipphonewebsite.models.dto.RegisterFormDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,13 +18,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.Optional;
-
 @Controller
 public class AuthenticationController {
 
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    PhoneRepository phoneRepository;
+    
     private static final String userSessionKey = "user";
 
     public User getUserFromSession(HttpSession session) {
