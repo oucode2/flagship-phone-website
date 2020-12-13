@@ -1,7 +1,6 @@
 package org.launchcode.flagshipphonewebsite.controllers;
 
 import org.launchcode.flagshipphonewebsite.models.User;
-import org.launchcode.flagshipphonewebsite.models.Phone;
 import org.launchcode.flagshipphonewebsite.models.data.UserRepository;
 import org.launchcode.flagshipphonewebsite.models.data.PhoneRepository;
 import org.launchcode.flagshipphonewebsite.models.dto.LoginFormDTO;

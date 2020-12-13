@@ -10,6 +10,6 @@ import javax.transaction.Transactional;
 @Transactional
 public interface PhoneRepository extends CrudRepository<Phone, Integer> {
     
-    Iterable<Phone> findByName(String manufacturer);
+    Iterable<Phone> findByBrand(String manufacturer);
 }
 

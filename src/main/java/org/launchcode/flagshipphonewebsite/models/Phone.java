@@ -9,7 +9,8 @@ public class Phone extends AbstractEntity{
 
     @NotNull
     @Size(min=3, max=50)
-    private String name;
+    
+    private String brand;
     private String model;
     private String price;
     private String colors;
@@ -29,9 +30,9 @@ public class Phone extends AbstractEntity{
     }
 
     // Initialize the id and value fields.
-    public Phone(String aImage, String aName, String aModel, String aPrice, String aColors, String aSize, String aBuild, String aResistance, String aProcessor, String aOs, String aRam, String aCamera, String aBattery, String aStorage, String aSpeakers) {
+    public Phone(String aBrand, String aImage, String aModel, String aPrice, String aColors, String aSize, String aBuild, String aResistance, String aProcessor, String aOs, String aRam, String aCamera, String aBattery, String aStorage, String aSpeakers) {
         super();
-        this.name = aName;
+        this.brand = aBrand;
         this.model = aModel;
         this.price = aPrice;
         this.colors = aColors;
@@ -50,14 +51,14 @@ public class Phone extends AbstractEntity{
 
     // Getters and setters.
 
-    public String getName() { 
-        return name; 
+    public String getBrand() {
+        return model;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
-
+ 
     public String getModel() {
         return model;
     }
@@ -170,7 +171,7 @@ public class Phone extends AbstractEntity{
 
     @Override
     public String toString() {
-        return name;
+        return brand;
 
    
     }

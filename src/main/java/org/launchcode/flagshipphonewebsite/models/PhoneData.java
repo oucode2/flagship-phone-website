@@ -29,8 +29,8 @@ public class PhoneData {
     }
     public static String getFieldValue(Phone phone, String fieldName){
         String theValue;
-        if (fieldName.equals("name")){
-            theValue = phone.getName();
+        if (fieldName.equals("brand")){
+            theValue = phone.getBrand();
         } else if (fieldName.equals("model")){
             theValue = phone.getModel().toString();
         } else {
@@ -46,7 +46,7 @@ public class PhoneData {
 
         for (Phone phone : allPhones) {
 
-            if (phone.getName().toLowerCase().contains(lower_val)) {
+            if (phone.getBrand().toLowerCase().contains(lower_val)) {
                 results.add(phone);
             } else if (phone.getModel().toString().toLowerCase().contains(lower_val)) {
                 results.add(phone);
