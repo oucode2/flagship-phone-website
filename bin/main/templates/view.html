@@ -4,12 +4,12 @@
 
 <body class="container  body-content">
 
-<h1 th:text="${'Brand Name: ' + #strings.capitalize(phone.name)}">Default Title</h1>
+<h1 th:text="${'Brand Name: ' + #strings.capitalize(phone.brand)}">Default Title</h1>
 <nav th:replace="fragments :: page-header"></nav>
 <br></br>
 <div class="phone-listing">
 <div class="text">
-    <p th:text="${'Brand Name: ' + #strings.capitalize(phone.name)}"></p>
+    <p th:text="${'Brand Name: ' + #strings.capitalize(phone.brand)}"></p>
     <p th:text="${'Model: ' + phone.model}"></p>
     <p th:text="${'Retail Price: $ ' + phone.price}"></p>
     <p th:text="${'Screen Size: ' + phone.size}"></p>

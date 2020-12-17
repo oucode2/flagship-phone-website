@@ -52,7 +52,7 @@ public class Phone extends AbstractEntity{
     // Getters and setters.
 
     public String getBrand() {
-        return model;
+        return brand;
     }
 
     public void setBrand(String brand) {

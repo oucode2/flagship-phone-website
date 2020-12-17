@@ -23,7 +23,7 @@ public class ListController {
     public ListController() {
 
         columnChoices.put("all", "All");
-        columnChoices.put ("name", "Brand Name");
+        columnChoices.put ("brand", "Brand Name");
         columnChoices.put("model", "Model");
         columnChoices.put("price", "Retail Price");
         }
