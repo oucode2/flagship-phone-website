@@ -40,6 +40,7 @@ public class AuthenticationFilter extends HandlerInterceptorAdapter {
 
         HttpSession session = request.getSession();
         User user = authenticationController.getUserFromSession(session);
+        
 
         // The user is logged in
               
@@ -54,9 +55,6 @@ public class AuthenticationFilter extends HandlerInterceptorAdapter {
         else {
             return true;
         }
-
-        
-        
-
+   
     }
 }
