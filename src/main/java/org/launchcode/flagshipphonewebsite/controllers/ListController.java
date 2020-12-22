@@ -3,6 +3,7 @@ package org.launchcode.flagshipphonewebsite.controllers;
 import org.launchcode.flagshipphonewebsite.models.Phone;
 import org.launchcode.flagshipphonewebsite.models.PhoneData;
 import org.launchcode.flagshipphonewebsite.models.data.PhoneRepository;
+import org.launchcode.flagshipphonewebsite.models.data.BrandRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +19,9 @@ public class ListController {
     @Autowired
     private PhoneRepository phoneRepository;
 
+    @Autowired
+    private BrandRepository brandRepository;
+
     static HashMap<String, String> columnChoices = new HashMap<>();
 
     public ListController() {
@@ -31,6 +35,7 @@ public class ListController {
     @RequestMapping("")
     public String list(Model model) {
         model.addAttribute("phones",phoneRepository.findAll());
+        model.addAttribute("brands", brandRepository.findAll());
         return "list";
     }
 

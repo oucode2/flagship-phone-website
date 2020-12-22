@@ -4,13 +4,18 @@ import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import javax.persistence.*;
+
+
 @Entity
 public class Phone extends AbstractEntity{
+
+    @ManyToOne
+    private Brand brand;
 
     @NotNull
     @Size(min=3, max=50)
     
-    private String brand;
     private String model;
     private String price;
     private String colors;
@@ -30,9 +35,10 @@ public class Phone extends AbstractEntity{
     }
 
     // Initialize the id and value fields.
-    public Phone(String aBrand, String aImage, String aModel, String aPrice, String aColors, String aSize, String aBuild, String aResistance, String aProcessor, String aOs, String aRam, String aCamera, String aBattery, String aStorage, String aSpeakers) {
+    public Phone(Brand brand, String aImage, String aModel, String aPrice, String aColors, String aSize, String aBuild, String aResistance, String aProcessor, String aOs, String aRam, String aCamera, String aBattery, String aStorage, String aSpeakers) {
         super();
-        this.brand = aBrand;
+
+        this.brand = brand;
         this.model = aModel;
         this.price = aPrice;
         this.colors = aColors;
@@ -47,15 +53,15 @@ public class Phone extends AbstractEntity{
         this.storage = aStorage;
         this.speakers = aSpeakers;
         this.image = aImage;
-        }
 
+    }
     // Getters and setters.
 
-    public String getBrand() {
+    public Brand getBrand() {
         return brand;
     }
 
-    public void setBrand(String brand) {
+    public void setBrand(Brand brand) {
         this.brand = brand;
     }
  
@@ -168,12 +174,10 @@ public class Phone extends AbstractEntity{
     public void setImage(String image) {
     this.image = image;
     }
-
-    @Override
-    public String toString() {
-        return brand;
-
-   
-    }
-
 }
+
+    //@Override
+    //public String toString() {
+    //    return brand;
+    //}
+

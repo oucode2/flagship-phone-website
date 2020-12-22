@@ -1,5 +1,6 @@
 package org.launchcode.flagshipphonewebsite.controllers;
 
+import org.launchcode.flagshipphonewebsite.models.data.BrandRepository;
 import org.launchcode.flagshipphonewebsite.models.data.PhoneRepository;
 import org.launchcode.flagshipphonewebsite.models.data.UserRepository;
 import org.launchcode.flagshipphonewebsite.models.Phone;
@@ -25,39 +26,42 @@ public class HomeController {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private BrandRepository brandRepository;
+
     @RequestMapping("apple")
     public String a(Model model) {
-        model.addAttribute("phones", phoneRepository.findByBrand("Apple"));
+        model.addAttribute("brands", brandRepository.findByName("Apple"));
         return "apple";
     }
 
     @RequestMapping("samsung")
     public String s (Model model) {
-        model.addAttribute("phones", phoneRepository.findByBrand("Samsung"));
+        model.addAttribute("brands", brandRepository.findByName("Samsung"));
         return "samsung";
     }
 
     @RequestMapping("lg")
     public String l(Model model){
-        model.addAttribute("phones", phoneRepository.findByBrand("LG"));
+        model.addAttribute("brands", brandRepository.findByName("LG"));
         return "lg";
     }
 
     @RequestMapping("motorola")
     public String m(Model model){
-        model.addAttribute("phones", phoneRepository.findByBrand("Motorola"));
+        model.addAttribute("brands", brandRepository.findByName("Motorola"));
         return "motorola";
     }
 
     @RequestMapping("oneplus")
     public String o(Model model){
-        model.addAttribute("phones", phoneRepository.findByBrand("OnePlus"));
+        model.addAttribute("brands", brandRepository.findByName("OnePlus"));
         return "oneplus";
     }
 
     @RequestMapping("google")
     public String g(Model model){
-        model.addAttribute("phones", phoneRepository.findByBrand("Google"));
+        model.addAttribute("brands", brandRepository.findByName("Google"));
         return "google";
     }
 
