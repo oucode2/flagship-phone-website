@@ -70,39 +70,27 @@ public class HomeController {
     @GetMapping("")
     public String home(Model model) {
         model.addAttribute("brands", brandRepository.findAll());
-
         return "home";
     }
 
     @GetMapping("admin")
     public String displayAddPhoneForm(Model model) {
-        model.addAttribute("phone", new Phone());
+        model.addAttribute("phone",new Phone());
         model.addAttribute("brand", new Brand());
-        model.addAttribute("brands", brandRepository.findAll());
         return "admin";
     }
 
     @PostMapping("admin")
-    public String processAddPhoneForm(@ModelAttribute @Valid Phone newPhone, Errors errors, @RequestParam int brandId)
-        {
+    public String processAddPhoneForm(@ModelAttribute @Valid Phone newPhone, Brand newBrand,
+                                      Errors errors) {
 
         if (errors.hasErrors()) {
             return "admin";
         }
 
-        Optional <?> optBrand = brandRepository.findById(brandId);
-        if (optBrand.isPresent()) {
-        Brand brand = (Brand) optBrand.get();
-        newPhone.setBrand(brand);
-
         phoneRepository.save(newPhone);
-
+        brandRepository.save(newBrand);
         return "redirect:";
-
-        } else {
-
-        return "redirect:../";
-        }
     }
 
     @GetMapping("view/{phoneId}")
