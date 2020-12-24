@@ -8,10 +8,12 @@
 </div>
     <br></br>
     <div class="leftImage">
-        <a th:href="@{/apple}">
-            <img alt="Apple Flagship Phones" title="Apple Flagship Phones" width="500"
-            th:src="@{/image/iphones.png}" />
-        </a>
+        <p th:each="brand : ${brands}">
+            <a th:href="@{'/view/' + ${brand.name}}" >
+                <img th:src="${'data:image/png;base64,' + brand.image}" width="500" th:text="${brand.name}" th:if= "${brand.image != null}"/>
+                <img th:src= "@{/image/imagecomingsoon.png}" width="250" th:text="${brand.name}" th:if= "${brand.image == null}"/>
+            </a>
+        </p>
     </div>    
     <div class="rightImage">
         <a th:href="@{/samsung}">

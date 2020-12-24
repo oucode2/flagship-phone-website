@@ -1,5 +1,6 @@
 package org.launchcode.flagshipphonewebsite.controllers;
 
+import org.launchcode.flagshipphonewebsite.models.Brand;
 import org.launchcode.flagshipphonewebsite.models.data.BrandRepository;
 import org.launchcode.flagshipphonewebsite.models.data.PhoneRepository;
 import org.launchcode.flagshipphonewebsite.models.data.UserRepository;
@@ -12,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
+import java.util.List;
 import java.util.Optional;
 
 
@@ -67,6 +69,7 @@ public class HomeController {
 
     @GetMapping("")
     public String home(Model model) {
+        model.addAttribute("brands", brandRepository.findAll());
         model.addAttribute("users", userRepository.findAll());
         return "home";
     }
@@ -74,19 +77,28 @@ public class HomeController {
     @GetMapping("admin")
     public String displayAddPhoneForm(Model model) {
         model.addAttribute(new Phone());
+        model.addAttribute("brands", brandRepository.findAll());
         return "admin";
     }
 
     @PostMapping("admin")
-    public String processAddPhoneForm(@ModelAttribute @Valid Phone newPhone,
-                                    Errors errors) {
+    public String processAddPhoneForm(@ModelAttribute @Valid Phone newPhone, Errors errors, Model model, @RequestParam int brandId)
+                                     {
 
         if (errors.hasErrors()) {
             return "admin";
         }
 
+        Optional <?> optBrand = brandRepository.findById(brandId);
+        if (optBrand.isPresent()) {
+        Brand brand = (Brand) optBrand.get();
+        newPhone.setBrand(brand);
         phoneRepository.save(newPhone);
         return "redirect:";
+        } else {
+
+        return "redirect:../";
+        }
     }
 
     @GetMapping("view/{phoneId}")
