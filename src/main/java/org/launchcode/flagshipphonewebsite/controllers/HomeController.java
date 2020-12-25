@@ -31,12 +31,6 @@ public class HomeController {
     @Autowired
     private BrandRepository brandRepository;
 
-    @RequestMapping("apple")
-    public String a(Model model) {
-        model.addAttribute("brands", brandRepository.findByName("Apple"));
-        return "apple";
-    }
-
     @GetMapping("")
     public String home(Model model) {
         model.addAttribute("brands", brandRepository.findAll());
