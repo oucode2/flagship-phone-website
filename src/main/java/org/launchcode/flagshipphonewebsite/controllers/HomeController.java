@@ -37,36 +37,6 @@ public class HomeController {
         return "apple";
     }
 
-    @RequestMapping("samsung")
-    public String s (Model model) {
-        model.addAttribute("brands", brandRepository.findByName("Samsung"));
-        return "samsung";
-    }
-
-    @RequestMapping("lg")
-    public String l(Model model){
-        model.addAttribute("brands", brandRepository.findByName("LG"));
-        return "lg";
-    }
-
-    @RequestMapping("motorola")
-    public String m(Model model){
-        model.addAttribute("brands", brandRepository.findByName("Motorola"));
-        return "motorola";
-    }
-
-    @RequestMapping("oneplus")
-    public String o(Model model){
-        model.addAttribute("brands", brandRepository.findByName("OnePlus"));
-        return "oneplus";
-    }
-
-    @RequestMapping("google")
-    public String g(Model model){
-        model.addAttribute("brands", brandRepository.findByName("Google"));
-        return "google";
-    }
-
     @GetMapping("")
     public String home(Model model) {
         model.addAttribute("brands", brandRepository.findAll());
@@ -93,19 +63,26 @@ public class HomeController {
         return "redirect:";
     }
 
-    @GetMapping("view/{phoneId}")
+
+    @GetMapping("viewphone/{phoneId}")
     public String displayViewPhone(Model model, @PathVariable int phoneId) {
 
         Optional<?> optPhone = phoneRepository.findById(phoneId);
         if (!optPhone.isEmpty()) {
             Phone phone = (Phone) optPhone.get();
             model.addAttribute("phone", phone);
-            return "view";
+            return "viewphone";
         } else {
             return "redirect:/";
         }
     }
 
+    @GetMapping("viewbrand/{brandId}")
+    public String displayViewBrand(Model model) {
+            model.addAttribute("phones", phoneRepository.findAll());
+            return "viewbrand";
+        }
 
-}
+    }
+
 

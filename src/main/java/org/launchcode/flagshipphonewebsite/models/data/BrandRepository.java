@@ -10,6 +10,5 @@ import javax.transaction.Transactional;
 @Transactional
 public interface BrandRepository extends CrudRepository<Brand, Integer> {
     
-    Brand findByName(String name);
 }
 

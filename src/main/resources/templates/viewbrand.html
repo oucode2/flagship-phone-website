@@ -7,10 +7,10 @@
 <div th:replace="fragments :: page-header"></div>
 
 <div class="container body-content">
-    <h2>Apple Flagship Phones</h2>
+    <h2>Flagship Phones</h2>
     
         <p th:each="phone : ${phones}">
-            <a th:href="@{'/view/' + ${phone.id}}" >
+            <a th:href="@{'/viewphone/' + ${phone.id}}" >
                 <img th:src="${'data:image/png;base64,' + phone.image}" width="250" th:text="${phone.model}" th:if= "${phone.image != null}"/>
                 <img th:src= "@{/image/imagecomingsoon.png}" width="250" th:text="${phone.model}" th:if= "${phone.image == null}"/>
             </a>
