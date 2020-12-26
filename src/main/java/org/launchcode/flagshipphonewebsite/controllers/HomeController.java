@@ -59,8 +59,8 @@ public class HomeController {
 
 
     @GetMapping("viewphone/{phoneId}")
-    public String displayViewPhone(Model model, @PathVariable int phoneId) {
-
+    public String displayViewPhone(Model model, @PathVariable int phoneId, Brand newBrand) {
+        model.addAttribute("brands", brandRepository.findAll());
         Optional<?> optPhone = phoneRepository.findById(phoneId);
         if (!optPhone.isEmpty()) {
             Phone phone = (Phone) optPhone.get();
