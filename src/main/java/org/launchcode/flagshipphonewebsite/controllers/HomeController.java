@@ -61,7 +61,9 @@ public class HomeController {
     @GetMapping("viewphone/{phoneId}")
     public String displayViewPhone(Model model, @PathVariable int phoneId, Brand newBrand) {
         model.addAttribute("brands", brandRepository.findAll());
+
         Optional<?> optPhone = phoneRepository.findById(phoneId);
+
         if (!optPhone.isEmpty()) {
             Phone phone = (Phone) optPhone.get();
             model.addAttribute("phone", phone);
@@ -72,11 +74,21 @@ public class HomeController {
     }
 
     @GetMapping("viewbrand/{brandId}")
-    public String displayViewBrand(Model model) {
-            model.addAttribute("phones", phoneRepository.findAll());
-            return "viewbrand";
-        }
+    public String displayViewBrand(Model model, @PathVariable int brandId, Phone newPhone) {
+        model.addAttribute("phones", phoneRepository.findAll());
 
+        Optional<?> optBrand = brandRepository.findById(brandId);
+
+        if (!optBrand.isEmpty()) {
+            Brand brand = (Brand) optBrand.get();
+            newPhone.setBrand(brand);
+            model.addAttribute("brand", brand);
+            phoneRepository.save(newPhone);
+            return "viewbrand";
+        } else {
+            return "redirect:/";
+        }
+    }
     }
 
 
