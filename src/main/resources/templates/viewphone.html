@@ -4,16 +4,14 @@
 
 <p class="container  body-content">
 
-<p th:each="brand : ${brands}">
-<a th:text="${'Brand Name: ' + #strings.capitalize(brand.name)}" th:remove="tag">Default Title</a></p>
+<h1 th:text="${'Brand Name: ' + #strings.capitalize(phone.brand.name)}">Default Title</h1>
 <nav th:replace="fragments :: page-header"></nav>
 <br></br>
 <div class="phone-listing">
 <div class="text">
     <br></br>
     <br></br>
-    <p th:each="brand : ${brands}">
-    <a th:text="${'Brand Name: ' + #strings.capitalize(brand.name)}" th:remove="tag"></a></p>
+    <p th:text="${'Brand Name: ' + #strings.capitalize(phone.brand.name)}"></p>
     <p th:text="${'Model: ' + phone.model}"></p>
     <p th:text="${'Retail Price: $ ' + phone.price}"></p>
     <p th:text="${'Screen Size: ' + phone.size}"></p>

@@ -1,5 +1,6 @@
 package org.launchcode.flagshipphonewebsite.controllers;
 
+import org.dom4j.rule.Mode;
 import org.launchcode.flagshipphonewebsite.models.Brand;
 import org.launchcode.flagshipphonewebsite.models.data.BrandRepository;
 import org.launchcode.flagshipphonewebsite.models.data.PhoneRepository;
@@ -39,24 +40,32 @@ public class HomeController {
 
     @GetMapping("admin")
     public String displayAddPhoneForm(Model model) {
-        model.addAttribute("phone",new Phone());
-        model.addAttribute("brand", new Brand());
+        model.addAttribute("brands",brandRepository.findAll());
+        model.addAttribute(new Phone());
+        model.addAttribute(new Brand());
         return "admin";
     }
 
     @PostMapping("admin")
     public String processAddPhoneForm(@ModelAttribute @Valid Phone newPhone, Brand newBrand,
-                                      Errors errors) {
+                                      Errors errors, Model model, @RequestParam int brandId) {
 
         if (errors.hasErrors()) {
+            model.addAttribute("title", "Add Phone");
             return "admin";
         }
 
-        phoneRepository.save(newPhone);
-        brandRepository.save(newBrand);
-        return "redirect:";
+        Optional optBrand = brandRepository.findById(brandId);
+        if (optBrand.isPresent()) {
+            Brand brand = (Brand) optBrand.get();
+            newPhone.setBrand(brand);
+            model.addAttribute("brand", brand);
+            phoneRepository.save(newPhone);
+            return "viewbrand";
+        } else {
+            return "redirect:";
+        }
     }
-
 
     @GetMapping("viewphone/{phoneId}")
     public String displayViewPhone(Model model, @PathVariable int phoneId, Brand newBrand) {
@@ -64,7 +73,7 @@ public class HomeController {
 
         Optional<?> optPhone = phoneRepository.findById(phoneId);
 
-        if (!optPhone.isEmpty()) {
+        if (optPhone.isPresent()) {
             Phone phone = (Phone) optPhone.get();
             model.addAttribute("phone", phone);
             return "viewphone";
@@ -74,21 +83,12 @@ public class HomeController {
     }
 
     @GetMapping("viewbrand/{brandId}")
-    public String displayViewBrand(Model model, @PathVariable int brandId, Phone newPhone) {
+    public String displayViewBrand(Model model, @PathVariable(value="brandId", required = false) int brandId, Phone newPhone) {
         model.addAttribute("phones", phoneRepository.findAll());
 
-        Optional<?> optBrand = brandRepository.findById(brandId);
-
-        if (!optBrand.isEmpty()) {
-            Brand brand = (Brand) optBrand.get();
-            newPhone.setBrand(brand);
-            model.addAttribute("brand", brand);
-            phoneRepository.save(newPhone);
-            return "viewbrand";
-        } else {
-            return "redirect:/";
+        return "viewbrand";
         }
-    }
+
     }
 
 
