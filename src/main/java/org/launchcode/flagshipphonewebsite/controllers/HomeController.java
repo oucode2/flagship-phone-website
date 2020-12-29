@@ -40,7 +40,7 @@ public class HomeController {
 
     @GetMapping("admin")
     public String displayAddPhoneForm(Model model) {
-        model.addAttribute("brands",brandRepository.findAll());
+        model.addAttribute("brands", brandRepository.findAll());
         model.addAttribute(new Phone());
         model.addAttribute(new Brand());
         return "admin";
@@ -61,9 +61,9 @@ public class HomeController {
             newPhone.setBrand(brand);
             model.addAttribute("brand", brand);
             phoneRepository.save(newPhone);
-            return "viewbrand";
-        } else {
             return "redirect:";
+        } else {
+            return "redirect:../";
         }
     }
 
@@ -82,9 +82,10 @@ public class HomeController {
         }
     }
 
+
     @GetMapping("viewbrand/{brandId}")
     public String displayViewBrand(Model model, @PathVariable(value="brandId", required = false) int brandId, Phone newPhone) {
-        model.addAttribute("phones", phoneRepository.findAll());
+        model.addAttribute("phones", phoneRepository.findByBrandId(brandId));
 
         return "viewbrand";
         }

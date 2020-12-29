@@ -10,7 +10,7 @@
     <br></br>
     <div class="leftImage">
         <p th:each="brand : ${brands}">
-            <a th:href="@{'/viewbrand/' + ${brand.id}}" >
+            <a th:href="@{'viewbrand/' + ${brand.id}}" >
                     <img th:src="${'data:image/png;base64,' + brand.image}" width="500" th:if= "${brand.image != null}"/>
                     <img th:src= "@{/image/imagecomingsoon.png}" width="250" th:text="${brand.name}" th:if= "${brand.image == null}"/>
             </a>
