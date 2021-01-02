@@ -27,7 +27,7 @@ public class ListController {
     public ListController() {
 
         columnChoices.put("all", "All");
-        columnChoices.put ("brand", "Brand Name");
+        columnChoices.put ("brand", "Brand");
         columnChoices.put("model", "Model");
         columnChoices.put("price", "Retail Price");
         }

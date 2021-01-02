@@ -13,12 +13,12 @@ public class PhoneData {
         }
 
         if (column.equals("all")) {
-            results = findByValue(value, allPhones, null);
+            results = findByValue(value, allPhones);
             return results;
         }
         for (Phone phone : allPhones) {
 
-            String aValue = getFieldValue(null, phone, column);
+            String aValue = getFieldValue(phone, column);
 
             if (aValue != null && aValue.toLowerCase().contains(value.toLowerCase())) {
                 results.add(phone);
@@ -27,10 +27,10 @@ public class PhoneData {
 
         return results;
     }
-    public static String getFieldValue(Brand brand, Phone phone, String fieldName){
+    public static String getFieldValue(Phone phone, String fieldName){
         String theValue;
-        if (fieldName.equals("name")){
-            theValue = brand.getName();
+        if (fieldName.equals("brand")){
+            theValue = phone.getBrand().toString();
         } else if (fieldName.equals("model")){
             theValue = phone.getModel().toString();
         } else {
@@ -39,14 +39,14 @@ public class PhoneData {
 
         return theValue;
     }
-    public static ArrayList<Phone> findByValue(String value, Iterable<Phone> allPhones, Brand brand) {
+    public static ArrayList<Phone> findByValue(String value, Iterable<Phone> allPhones) {
         String lower_val = value.toLowerCase();
 
         ArrayList<Phone> results = new ArrayList<>();
 
         for (Phone phone : allPhones) {
 
-            if (brand.getName().toLowerCase().contains(lower_val)) {
+            if (phone.getBrand().toString().toLowerCase().contains(lower_val)) {
                 results.add(phone);
             } else if (phone.getModel().toString().toLowerCase().contains(lower_val)) {
                 results.add(phone);

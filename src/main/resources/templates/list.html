@@ -23,8 +23,8 @@
             <a th:href="@{/list/phones(column='All',value='View All')}">View All</a>
         </td>
         <td>
-            <li th:each="phone : ${phones}">
-                <a th:href="@{/list/phones(column=name,value=${phone.brand})}" th:text="${brand.name}"></a>
+            <li th:each="brand : ${brands}">
+                <a th:href="@{/list/phones(column=brand,value=${brand.name})}" th:text="${brand.name}"></a>
             </li>
             </td>
         <td>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<br xmlns:th="http://www.thymeleaf.org/">
+<html xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head">
 </head>
 <div th:replace="fragments :: page-header"></div>
@@ -14,7 +14,7 @@
                 <br></br>
                 <p>
                     Brand Name: 
-                    <a th:text="${brand.name}" th:remove="tag"></a>
+                    <a th:text="${phone.brand.name}" th:remove="tag"></a>
                 </p>
                 <p>
                     Model:
@@ -26,7 +26,7 @@
                 </p>
                 <p>
                     Details:  
-                    <a th:href="@{'/view/' + ${phone.id}}">Click here to see more details</a>
+                    <a th:href="@{'/viewphone/' + ${phone.id}}">Click here to see more details</a>
                 </p>
             </td> 
             <td>

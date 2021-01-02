@@ -43,18 +43,19 @@ public class BrandController {
             return "redirect:../";
         }
     }
-}
 
-//    @GetMapping("view/{brandId}")
-//    public String displayViewBrand(Model model, @PathVariable int brandId) {
-//
-//        Optional optBrand = brandRepository.findById(brandId);
-//        if (optBrand.isPresent()) {
-//            Brand brand = (Brand) optBrand.get();
-//            model.addAttribute("brand", brand);
-//            return "brand/view";
-//        } else {
-//            return "redirect:../";
-//        }
-//    }
-//}
+}
+/*
+    @GetMapping("view/{brandId}")
+    public String displayViewBrand(Model model, @PathVariable int brandId) {
+
+        Optional optBrand = brandRepository.findById(brandId);
+        if (optBrand.isPresent()) {
+            Brand brand = (Brand) optBrand.get();
+            model.addAttribute("brand", brand);
+            return "brand/view";
+        } else {
+            return "redirect:../";
+        }
+    }
+}*/
