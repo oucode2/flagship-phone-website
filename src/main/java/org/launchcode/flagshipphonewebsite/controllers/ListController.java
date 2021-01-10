@@ -29,7 +29,7 @@ public class ListController {
 
         columnChoices.put("all", "All");
         columnChoices.put("brand", "Brand Name");
-        columnChoices.put("model", "Model");
+        columnChoices.put("name", "Model Name");
         columnChoices.put("price", "Price");
         }
 
@@ -42,7 +42,7 @@ public class ListController {
 
     @RequestMapping(value = "phones")
     public String listPhonesByColumnAndValue(Model model, @RequestParam String column, @RequestParam String value) {
-        
+
         Iterable<Phone> phones;
         if (column.toLowerCase().equals("all")){
             phones = phoneRepository.findAll();

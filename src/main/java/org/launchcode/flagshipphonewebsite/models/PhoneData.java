@@ -31,8 +31,8 @@ public class PhoneData {
         String theValue;
         if (fieldName.equals("brand")){
             theValue = phone.getBrand().toString();
-        } else if (fieldName.equals("model")){
-            theValue = phone.getModel();
+        } else if (fieldName.equals("name")){
+            theValue = phone.getName();
         } else {
             theValue = phone.getPrice();
         }
@@ -48,7 +48,7 @@ public class PhoneData {
 
             if (phone.getBrand().toString().toLowerCase().contains(lower_val)) {
                 results.add(phone);
-            } else if (phone.getModel().toLowerCase().contains(lower_val)) {
+            } else if (phone.getName().toLowerCase().contains(lower_val)) {
                 results.add(phone);
             } else if (phone.getPrice().toLowerCase().contains(lower_val)) {
                 results.add(phone);

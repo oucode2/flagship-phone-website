@@ -10,15 +10,13 @@
     <table class="phone-listing">
         <tr th:each="phone : ${phones}">
             <td>
-                <br></br>
-                <br></br>
-                <p>
+               <p>
                     Brand Name: 
                     <a th:text="${phone.brand.name}" th:remove="tag"></a>
                 </p>
                 <p>
-                    Model:
-                    <a th:text="${phone.model}" th:remove="tag"></a>
+                    Model Name:
+                    <a th:text="${phone.name}" th:remove="tag"></a>
                 </p>
                 <p>
                    Retail Price: $

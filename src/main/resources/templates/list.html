@@ -29,7 +29,7 @@
             </td>
         <td>
             <li th:each="phone : ${phones}">
-                <a th:href="@{/list/phones(column=model,value=${phone.model})}" th:text="${phone.model}"></a>
+                <a th:href="@{/list/phones(column=name,value=${phone.name})}" th:text="${phone.name}"></a>
             </li>
             </td>
         <td>

@@ -9,10 +9,9 @@
 <br></br>
 <div class="phone-listing">
 <div class="text">
-    <br></br>
-    <br></br>
+
     <p th:text="${'Brand Name: ' + #strings.capitalize(phone.brand.name)}"></p>
-    <p th:text="${'Model: ' + phone.model}"></p>
+    <p th:text="${'Model Name: ' + phone.name}"></p>
     <p th:text="${'Retail Price: $ ' + phone.price}"></p>
     <p th:text="${'Screen Size: ' + phone.size}"></p>
     <p th:text="${'Colors: ' + phone.colors}"></p>
