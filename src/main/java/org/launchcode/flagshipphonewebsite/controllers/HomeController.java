@@ -84,7 +84,7 @@ public class HomeController {
 
 
     @GetMapping("viewbrand/{brandId}")
-    public String displayViewBrand(Model model, @PathVariable(value="brandId", required = false) int brandId, Phone newPhone) {
+    public String displayViewBrand(Model model, @PathVariable(value="brandId") int brandId, Phone newPhone) {
         model.addAttribute("phones", phoneRepository.findByBrandId(brandId));
 
         return "viewbrand";

@@ -25,7 +25,8 @@ public class Phone extends AbstractEntity{
     private String processor;
     private String os;
     private String ram;
-    private String camera;
+    private String frontCameras;
+    private String rearCameras;
     private String battery;
     private String storage;
     private String speakers;
@@ -35,7 +36,7 @@ public class Phone extends AbstractEntity{
     }
 
     // Initialize the id and value fields.
-    public Phone(Brand brand, String aImage, String aModel, String aPrice, String aColors, String aSize, String aBuild, String aResistance, String aProcessor, String aOs, String aRam, String aCamera, String aBattery, String aStorage, String aSpeakers) {
+    public Phone(Brand brand, String aImage, String aModel, String aPrice, String aColors, String aSize, String aBuild, String aResistance, String aProcessor, String aOs, String aRam, String afrontCameras, String arearCameras, String aBattery, String aStorage, String aSpeakers) {
         super();
 
         this.brand = brand;
@@ -48,7 +49,8 @@ public class Phone extends AbstractEntity{
         this.processor = aProcessor;
         this.os = aOs;
         this.ram = aRam;
-        this.camera = aCamera;
+        this.frontCameras = afrontCameras;
+        this.rearCameras = arearCameras;
         this.battery = aBattery;
         this.storage = aStorage;
         this.speakers = aSpeakers;
@@ -88,6 +90,7 @@ public class Phone extends AbstractEntity{
     public void setColors(String colors) {
         this.colors = colors;
     }
+
     public String getSize() {
         return size;
     }
@@ -119,6 +122,7 @@ public class Phone extends AbstractEntity{
     public void setProcessor(String processor) {
         this.processor = processor;
     }
+
     public String getOs() {
         return os;
     }
@@ -135,13 +139,17 @@ public class Phone extends AbstractEntity{
         this.ram = ram;
     }
 
-    public String getCamera() {
-        return camera;
+    public String getRearCameras() {
+        return rearCameras;
     }
 
-    public void setCamera(String camera) {
-        this.camera = camera;
+    public void setRearCameras(String rearCameras) {
+        this.rearCameras = rearCameras;
     }
+
+    public String getFrontCameras() { return frontCameras; }
+
+    public void setFrontCameras(String frontCameras) { this.frontCameras = frontCameras; }
 
     public String getBattery() {
         return battery;
@@ -176,8 +184,5 @@ public class Phone extends AbstractEntity{
     }
 }
 
-    //@Override
-    //public String toString() {
-    //    return brand;
-    //}
+
 

@@ -42,8 +42,7 @@ public class ListController {
 
     @RequestMapping(value = "phones")
     public String listPhonesByColumnAndValue(Model model, @RequestParam String column, @RequestParam String value) {
-        model.addAttribute("brands", brandRepository.findAll());
-
+        
         Iterable<Phone> phones;
         if (column.toLowerCase().equals("all")){
             phones = phoneRepository.findAll();
