@@ -43,19 +43,19 @@
                 <br></br>
                 <p>
                     Brand Name: 
-                    <a th:href="@{'/view/' + ${phone.id}}" th:text="${brand.name}" th:remove="tag"></a>
+                    <a th:href="@{'/viewphone/' + ${phone.id}}" th:text="${phone.brand.name}" th:remove="tag"></a>
                 </p>
                 <p>
                     Model:
-                    <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.model}" th:remove="tag"></a>
+                    <a th:href="@{'/viewphone/' + ${phone.id}}" th:text="${phone.model}" th:remove="tag"></a>
                 </p>
                 <p>
                     Retail Price: $
-                    <a th:href="@{'/view/' + ${phone.id}}" th:text="${phone.price}" th:remove="tag"></a>
+                    <a th:href="@{'/viewphone/' + ${phone.id}}" th:text="${phone.price}" th:remove="tag"></a>
                 </p>
                 <p>
                     Details:  
-                    <a th:href="@{'/view/' + ${phone.id}}">Click here to see more details</a>
+                    <a th:href="@{'/viewphone/' + ${phone.id}}">Click here to see more details</a>
                 </p>
                 
             </td>
@@ -65,8 +65,5 @@
                     <img th:src= "@{/image/imagecomingsoon.png}" width="250" th:if= "${phone.image == null}"/>
             </td>
             </div>
-    </tr>
-</table>
-</div>
 </body>
 </html>

@@ -44,8 +44,6 @@ public class BrandController {
         }
     }
 
-}
-/*
     @GetMapping("view/{brandId}")
     public String displayViewBrand(Model model, @PathVariable int brandId) {
 
@@ -58,4 +56,4 @@ public class BrandController {
             return "redirect:../";
         }
     }
-}*/
+}

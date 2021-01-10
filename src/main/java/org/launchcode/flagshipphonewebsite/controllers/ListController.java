@@ -7,6 +7,7 @@ import org.launchcode.flagshipphonewebsite.models.data.BrandRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -27,9 +28,9 @@ public class ListController {
     public ListController() {
 
         columnChoices.put("all", "All");
-        columnChoices.put ("brand", "Brand Name");
+        columnChoices.put("brand", "Brand Name");
         columnChoices.put("model", "Model");
-        columnChoices.put("price", "Retail Price");
+        columnChoices.put("price", "Price");
         }
 
     @RequestMapping("")
@@ -41,6 +42,8 @@ public class ListController {
 
     @RequestMapping(value = "phones")
     public String listPhonesByColumnAndValue(Model model, @RequestParam String column, @RequestParam String value) {
+        model.addAttribute("brands", brandRepository.findAll());
+
         Iterable<Phone> phones;
         if (column.toLowerCase().equals("all")){
             phones = phoneRepository.findAll();

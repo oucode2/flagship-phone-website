@@ -2,6 +2,7 @@ package org.launchcode.flagshipphonewebsite.models;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,12 +11,11 @@ import java.util.List;
 public class Brand extends AbstractEntity {
 
     private String image;
-    private String name;
+
 
     @JoinColumn
     @OneToMany
-
-    private List<Phone> phones = new ArrayList<>();
+    private List<Phone> phones = new ArrayList<Phone>();
 
     public Brand() {}
 
@@ -23,14 +23,6 @@ public class Brand extends AbstractEntity {
     //    this.name = name;
     //    this.image = image;
     //}
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getImage() {
         return image;
