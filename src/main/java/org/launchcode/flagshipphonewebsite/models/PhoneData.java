@@ -27,6 +27,7 @@ public class PhoneData {
 
         return results;
     }
+
     public static String getFieldValue(Phone phone, String fieldName){
         String theValue;
         if (fieldName.equals("brand")){

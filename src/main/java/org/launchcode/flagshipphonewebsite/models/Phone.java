@@ -13,8 +13,7 @@ public class Phone extends AbstractEntity{
     @ManyToOne
     private Brand brand;
 
-    @NotNull
-    @Size(min=3, max=50)
+    @Size(min=1, max=50)
     
     private String name;
     private String price;

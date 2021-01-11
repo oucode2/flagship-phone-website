@@ -55,7 +55,7 @@ public class HomeController {
             return "admin";
         }
 
-        Optional optBrand = brandRepository.findById(brandId);
+        Optional <?> optBrand = brandRepository.findById(brandId);
         if (optBrand.isPresent()) {
             Brand brand = (Brand) optBrand.get();
             newPhone.setBrand(brand);
