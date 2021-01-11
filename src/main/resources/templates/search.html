@@ -62,7 +62,9 @@
                 <div class="rightImage">
                     <img th:src="${'data:image/png;base64,' + phone.image}"  alt="image" width="250" th:if= "${phone.image != null}"/>
                     <img th:src= "@{/image/imagecomingsoon.png}" width="250" th:if= "${phone.image == null}"/>
+</table>
             </td>
             </div>
+
 </body>
 </html>

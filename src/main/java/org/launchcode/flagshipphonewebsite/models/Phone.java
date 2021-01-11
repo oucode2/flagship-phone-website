@@ -1,8 +1,9 @@
 package org.launchcode.flagshipphonewebsite.models;
 
 import javax.persistence.Entity;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+
 
 import javax.persistence.*;
 
@@ -13,9 +14,10 @@ public class Phone extends AbstractEntity{
     @ManyToOne
     private Brand brand;
 
-    @Size(min=1, max=50)
-    
+    @Size(max=50)
+    @NotBlank(message="The field name is required")
     private String name;
+
     private String price;
     private String colors;
     private String size;
