@@ -53,10 +53,7 @@ public class PhoneData {
                 results.add(phone);
             } else if (phone.getPrice().toLowerCase().contains(lower_val)) {
                 results.add(phone);
-            } else if (phone.toString().toLowerCase().contains(lower_val)) {
-                results.add(phone);
             }
-
         }
 
         return results;

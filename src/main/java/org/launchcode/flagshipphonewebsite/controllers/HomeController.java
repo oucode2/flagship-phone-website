@@ -72,7 +72,6 @@ public class HomeController {
         model.addAttribute("brands", brandRepository.findAll());
 
         Optional<?> optPhone = phoneRepository.findById(phoneId);
-
         if (optPhone.isPresent()) {
             Phone phone = (Phone) optPhone.get();
             model.addAttribute("phone", phone);
@@ -84,7 +83,9 @@ public class HomeController {
 
 
     @GetMapping("viewbrand/{brandId}")
-    public String displayViewBrand(Model model, @PathVariable(value="brandId") int brandId, Phone newPhone) {
+    public String displayViewBrand(Model model, @PathVariable int brandId, Phone newPhone) {
+        var brandName = brandRepository.findById(brandId).map(Brand::getName).orElse("Unknown");
+        model.addAttribute("brand", brandName);
         model.addAttribute("phones", phoneRepository.findByBrandId(brandId));
 
         return "viewbrand";

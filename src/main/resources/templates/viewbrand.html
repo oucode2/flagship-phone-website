@@ -7,10 +7,12 @@
 <div th:replace="fragments :: page-header"></div>
 
 <div class="container body-content">
-    <h2>Flagship Phones</h2>
-    
+
+    <h1 th:text="${'Brand Name: ' + #strings.capitalize(brand)}">Default Title</h1>
+
         <p th:each="phone : ${phones}">
             <a th:href="@{'/viewphone/' + ${phone.id}}" >
+
                 <img th:src="${'data:image/png;base64,' + phone.image}" width="250" th:text="${phone.name}" th:if= "${phone.image != null}"/>
                 <img th:src= "@{/image/imagecomingsoon.png}" width="250" th:text="${phone.name}" th:if= "${phone.image == null}"/>
             </a>
