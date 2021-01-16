@@ -1,7 +1,9 @@
 package org.launchcode.flagshipphonewebsite.controllers;
 
 import org.launchcode.flagshipphonewebsite.models.Brand;
+import org.launchcode.flagshipphonewebsite.models.Phone;
 import org.launchcode.flagshipphonewebsite.models.data.BrandRepository;
+import org.launchcode.flagshipphonewebsite.models.data.PhoneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

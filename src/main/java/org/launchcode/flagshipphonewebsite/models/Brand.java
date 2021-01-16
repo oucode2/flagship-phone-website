@@ -19,11 +19,6 @@ public class Brand extends AbstractEntity {
 
     public Brand() {}
 
-    //public Brand(String name, String image) {
-    //    this.name = name;
-    //    this.image = image;
-    //}
-
     public String getImage() {
         return image;
     }
