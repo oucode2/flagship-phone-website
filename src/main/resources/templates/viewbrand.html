@@ -8,7 +8,7 @@
 
 <div class="container body-content">
 
-    <h1 th:text="${'Brand Name: ' + #strings.capitalize(brand)}">Default Title</h1>
+    <h1 th:text="${#strings.capitalize(brand) + ' Flagship Phones'}">Default Title</h1>
 
         <p th:each="phone : ${phones}">
             <a th:href="@{'/viewphone/' + ${phone.id}}" >

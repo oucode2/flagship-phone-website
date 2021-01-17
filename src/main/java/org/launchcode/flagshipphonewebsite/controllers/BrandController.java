@@ -46,7 +46,7 @@ public class BrandController {
         }
     }
 
-    @GetMapping("view/{brandId}")
+/*    @GetMapping("view/{brandId}")
     public String displayViewBrand(Model model, @PathVariable int brandId) {
 
         Optional optBrand = brandRepository.findById(brandId);
@@ -57,5 +57,5 @@ public class BrandController {
         } else {
             return "redirect:../";
         }
-    }
+    }*/
 }
