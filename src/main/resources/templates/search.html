@@ -39,7 +39,7 @@
 <table class="phone-listing">
     <tr th:each="phone : ${phones}">
             <td>
-
+                <br></br>
                 <p>
                     Brand Name: 
                     <a th:href="@{'/viewphone/' + ${phone.id}}" th:text="${phone.brand.name}" th:remove="tag"></a>
